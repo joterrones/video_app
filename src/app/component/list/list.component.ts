@@ -61,7 +61,7 @@ export class ListComponent implements OnInit {
   detalle(item): void {
     const dialogRef = this.dialog.open(DetailsComponent, {
       width: '900px',
-      maxHeight: '700px',
+      maxHeight: '750px',
       data: item
     });
     dialogRef.afterClosed().subscribe(result => {
