@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { VideoService } from '../../service/video.service';
 import { DetailsComponent } from '../details/details.component';
-import { Observable, of } from "rxjs";
-import { map } from 'rxjs/operators';
+
+import { MatDialog } from '@angular/material';
 @Component({
   selector: 'app-list',
 
@@ -12,11 +12,11 @@ import { map } from 'rxjs/operators';
 })
 export class ListComponent implements OnInit {
   @ViewChild(DetailsComponent, { static: true }) detail: DetailsComponent;
-  //private videolist = [];
-
   videolist;
+  f_detail = false;
   constructor(
     private _videoService: VideoService,
+    public dialog: MatDialog,
 
   ) { }
   index = 1;
@@ -30,7 +30,7 @@ export class ListComponent implements OnInit {
       result => {
         console.log(result);
         try {
-          this.videolist =result.items;
+          this.videolist = result.items;
         } catch (error) {
           console.log(error.stack);
         } finally {
@@ -57,20 +57,20 @@ export class ListComponent implements OnInit {
       });
   }
 
- /* getMovie() {
-    this.videolist$= this._videoService.get(this.index);
-    csonole.log(this.videolist$);
-  }*/
 
   detalle(item): void {
-    console.log(item);
-    this.detail.detalleitem(item);
+    const dialogRef = this.dialog.open(DetailsComponent, {
+      width: '900px',
+      maxHeight: '700px',
+      data: item
+    });
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 
   onScroll() {
-
     this.index++;
-    console.log("página "+ this.index);
+    console.log("página " + this.index);
     this.getMovie_next();
   }
 

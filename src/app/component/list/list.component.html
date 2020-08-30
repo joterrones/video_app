@@ -1,20 +1,15 @@
-<div class="container">
-    <div class="list">
-        Lista de Videos
-        <div class="container2" >
-            <div *ngFor="let item of videolist">
-                <mat-card class="example-card"  *ngIf="item.poster_path">
-                    
-                    <img mat-card-image [src]="'https://image.tmdb.org/t/p/w185/'+item.poster_path"
-                        alt="Photo of a Shiba Inu" (error)="errorimg()" (click)="detalle(item)">
-                    <h4> {{item.original_title}}</h4>
-                </mat-card>
-            </div>
-            <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="5"
-            (scrolled)="onScroll()" >
-           
-            </div>
-        </div>
-   
+<div [hidden]="!f_detail">
+    <app-details></app-details>
+</div>
+<div class="container" [hidden]="f_detail">
+    <div *ngFor="let item of videolist">
+        <mat-card class="example-card" *ngIf="item.poster_path">
+            <img mat-card-image [src]="'https://image.tmdb.org/t/p/w185/'+item.poster_path" alt="Photo of a Shiba Inu"
+                (error)="errorimg()" (click)="detalle(item)">
+            <h4> {{item.original_title}}</h4>
+        </mat-card>
+    </div>
+    <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="5"
+        (scrolled)="onScroll()">
     </div>
 </div>

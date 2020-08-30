@@ -10,13 +10,19 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatDialogModule, MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MainComponent } from './component/main/main.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common'
+import { routing1, appRoutingProviders } from './app.routing';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    DetailsComponent
+    DetailsComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +33,18 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatListModule,
     MatCardModule,
     MatIconModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatDialogModule,
+    FormsModule,
+    routing1
   ],
-  providers: [],
+  entryComponents: [
+    DetailsComponent
+  ],
+  providers: [  { provide: LocationStrategy, useClass: HashLocationStrategy  },
+    {provide: MatDialogRef},
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
