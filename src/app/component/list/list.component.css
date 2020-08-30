@@ -1,0 +1,29 @@
+
+
+.container{
+
+    display: flex;
+    flex-direction: row;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 60rem;
+    overflow: scroll;
+
+}
+.detail{
+    width: 100%;
+}
+
+.example-card{
+    margin-top: 10px;
+}
+
+
+.search-results {
+    height: 20rem;
+    overflow: scroll;
+  }
+

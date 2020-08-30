@@ -1,0 +1,49 @@
+.marco{
+    margin:20px;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+ /*   justify-content: center;*/
+    padding: 10px;
+    margin: 10px;
+}
+
+.detalle {
+    display: flex;
+   flex-direction: column;
+   margin:  10px;
+    
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+}
+
+.imgfondo {
+
+    /*background-position: right -200px top;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.fondo{
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(20.78%, 13.33%, 20.78%, 1.00) 150px, rgba(27.06%, 21.18%, 27.06%, 0.84) 100%);
+    
+   
+}
+
+h1 {
+    color: white;
+}
+
+p {
+    color: white;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="list">
+        Lista de Videos
+        <div class="container2">
+            <div *ngFor="let item of videolist" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+            (scrolled)="onScroll()">
+                <mat-card class="example-card">
+                    <img mat-card-image [src]="'https://image.tmdb.org/t/p/w185/'+item.poster_path"
+                        alt="Photo of a Shiba Inu" (click)="detalle(item)">
+                    <h4> {{item.original_title}}</h4>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    <div class ="detail">
+        <app-details></app-details>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="marco">
+    <div class="imgfondo" [ngStyle]="{'background-image': item.rutafoto }">
+        <div class="fondo">
+            <div class="contenedor">
+                <img [src]="'https://image.tmdb.org/t/p/w400/'+item.poster_path">
+                <div class="detalle">
+                    <h1>{{item.original_title}}</h1>
+                    <div class="info">
+                        <p>
+                            <mat-icon aria-label="Example home icon">remove_red_eye</mat-icon>{{item.vote_count}}
+                        </p>
+                        <p>
+                            <mat-icon aria-label="Example home icon">beenhere</mat-icon>{{item.vote_average}}
+                        </p>
+                        <p>
+                            <mat-icon aria-label="Example home icon">beenhere</mat-icon>{{item.popularity}}
+                        </p>
+                        <p>
+                            <mat-icon aria-label="Example home icon">beenhere</mat-icon>{{item.vote_average}}
+                        </p>
+                    </div>
+                    <p>{{item.overview}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
