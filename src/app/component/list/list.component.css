@@ -10,7 +10,7 @@
     flex-direction: column;
     width: 300px;
     height: 60rem;
-    overflow: scroll;
+
 
 }
 .detail{
@@ -23,7 +23,8 @@
 
 
 .search-results {
-    height: 20rem;
-    overflow: scroll;
+    height: 100px;
+    overflow-y: scroll;
   }
+
 

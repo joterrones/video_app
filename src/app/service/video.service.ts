@@ -13,8 +13,8 @@ export class VideoService {
         this.url = 'https://api.themoviedb.org/3/';
     }
 
-    get(): Observable<any> {
-        return this._http.get(this.url + 'list/1?page=1&api_key=10cb90c6d244b3a30f28a379482c3267', {});
+    get(index): Observable<any> {
+        return this._http.get(this.url + 'list/1?page='+index+'&api_key=10cb90c6d244b3a30f28a379482c3267', {});
     }
 
  
